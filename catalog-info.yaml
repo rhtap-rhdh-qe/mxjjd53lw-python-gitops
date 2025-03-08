@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mxjjd53lw-python-gitops
+  description: This is GitOps manifest for mxjjd53lw-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mxjjd53lw-python
+    backstage.io/kubernetes-id: mxjjd53lw-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: mxjjd53lw-python   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mxjjd53lw-python
